@@ -160,7 +160,7 @@ Web Server adalah server tempat website di atur. Pada Web Server ini setiap webs
   
   /home = /index.php/home
   ```
-  Re![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.2.png)
+  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.2.png)
   
   - Berikutnya **AllowOverride** pada file **/etc/apache2/sites-available/semerud06.pw**
   
