@@ -7,6 +7,13 @@
 ## Soal
  ### Keterangan
   3 buah server yang berada di MALANG, MOJOKERTO dan PROBOLINGGO. Server MALANG akan digunakan sebagai DNS Server Master, MOJOKERTO akan digunakan sebagai DNS Server Slave dan PROBOLINGGO akan digunakan sebagai Web Server. Selain 3 server terdapat 2 klien yang digunakan untuk testing yaitu GRESIK dan SIDOARJO. Untuk menyambungkan semua jaringan tersebut diberi router di SURABAYA.
+ 
+IP eth0 SURABAYA	= 10.151.78.30
+IP_tuntap	       = 10.151.78.29
+IP_eth1_SURABAYA	= 10.151.79.57
+IP_MALANG       	= 10.151.79.58
+IP_MOJOKERTO    	= 10.151.79.59
+IP_Probolinggo  	= 10.151.79.60
 
 ### Soal 1
   **Membuat website utama dengan alamat http://semerud06.pw**
