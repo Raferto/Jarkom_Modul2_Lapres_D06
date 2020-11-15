@@ -90,19 +90,59 @@
   
   - Pertama-tama pada uml **Probolinggo**, install **apache2** dan **php5**, serta **unzip**
   - Kemudian pada folder **etc/apache2/sites-available** di-copy-kan file default ke semerud06.pw
-  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/probolinggo_cp.png)
+  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/8.1.png)
   
-  - Selanjutnya ditambahkan servername, alias dan document root sesuai soal
-  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/probolinggo_semeru.png)
+  - Selanjutnya ditambahkan servername, alias, dan document root sesuai soal
+  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/8.2.png)
   
-  - Lalu pada folder **/var/www** didownload file/folder pendukung untuk web semeru dengan perintah **wget 10.151.36.202/semeru.pw.zip**
-  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/probolinggo_download.png)
+  - Lalu pada folder **/var/www** didownload file/folder pendukung dengan perintah **wget 10.151.36.202/semeru.pw.zip**
+  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/8.3.png)
   
   - Setelah selesai download, zip diekstrak dan kemudian diganti nama menjadi semerud06.pw.
-  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/probolinggo_ekstrak.png)
+  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/8.4.png)
   
-  - Terakhir enable site dengan perintah **a2ensite** dan Apache2 direstart
-  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/probolinggo_en&res.png)
+  - Terakhir enable site dengan perintah **a2ensite** dan Apache2 direstart dengan perintah **service apache2 restart**
+  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/8.5.png)
   
   - Screenshot Test
-  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/8.png)
+  ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/semeru.png)
+
+### Soal 9
+  **Mengaktifkan mod rewrite agar url dari http://semerud06.pw/index.php/home menjadi http://semerud06.pw/home**
+  
+  - Pertama pada uml **Probolinggo**, diaktifkan mod rewrite dengan perintah **a2enmod rewrite** yang dilanjutkan dengan merestart apache2
+  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.1.png)
+  
+  - Selanjutnya dibuat file **.htaccess** di semerud06.pw, dan diisi sebagai berikut
+  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.2.png)
+  
+  - Berikutnya **Allowoverride** pada file **/etc/apache2/sites-available/semerud06.pw**
+  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.3.png)
+  
+  - Terakhir apache2 direstart dengan perintah **service apache2 restart**
+  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.4.png)
+
+  - Screenshot Test
+  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/semeru_home.png)
+  
+### Soal 10
+  **Membuat web http://penanjakan.semerud13.pw agar digunakan untuk menyimpan asset file yang memiliki Document Root pada /var/www/penanjakan.semerud06.pw dan memiliki struktur folder sebagai berikut**
+  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10_1.png)
+  
+  - Pertama-tama pada uml **Probolinggo** folder **/var/www/** didownload File/folder pendukung dengan perintah **wget 10.151.36.202/penanjakan.semeru.pw.zip**
+  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.2.png)
+  
+  - Setelah selesai download, diunzip dan direname filenya
+  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.3.png)
+  
+  - kemudian ... (buat konfig di /etc/apache2/sites-available)
+  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.4.png)
+  
+  - Selanjutnya di-copy-kan file default ke **penanjakan.semerud06.pw**
+  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.5.png)
+  
+  - Berikutnya diedit file **penanjakan.semerud06.pw** dengan menambahkan config sebagai berikut:
+  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.6.png)
+  
+  - Screenshot Test
+  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/penanjakan.png)
