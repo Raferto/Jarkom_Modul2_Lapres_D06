@@ -254,11 +254,11 @@
   - Terakhir apache2 direstart dengan perintah **service apache2 restart**
   ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/restart.png)
   
-  - Screenshot Test **semeru**
+  - Screenshot Test **semeru** dan/atau **semeru**
   ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/17.3.png)
   
-  - Screenshot Test substring **semeru**
+  - Screenshot Test tidak ada substring **semeru**
   ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/17.4.png)
   
-  - Screenshot Test tidak ada substring **semeru**
+  - Screenshot Test tidak ada substring **semeru** dan foto tidak ada
   ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/17.5.png)
