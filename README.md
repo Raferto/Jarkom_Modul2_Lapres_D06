@@ -72,9 +72,7 @@
  
  - Screenshot Test
   
-  ![s5](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/5.1.png)
-  
-  ![s5](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/5.2.png)
+  ![s5](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/5.png)
   
 ### Soal 6
   **Membuat subdomain dengan alamat http://gunung.semerud06.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO**
