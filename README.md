@@ -88,7 +88,7 @@
 ### Soal 8
   **Membuat domain http://semerud06.pw memiliki Document Root pada /var/www/semerud06.pw**
   
-  - Pertama-tama pada uml **Probolinggo**, install **apache2** dan **php5**
+  - Pertama-tama pada uml **Probolinggo**, install **apache2** dan **php5**, serta **unzip**
   - Kemudian pada folder **etc/apache2/sites-available** di-copy-kan file default ke semerud06.pw
   ![s8](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/probolinggo_cp.png)
   
