@@ -120,14 +120,14 @@
   ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.3.png)
   
   - Terakhir apache2 direstart dengan perintah **service apache2 restart**
-  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.4.png)
+  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/restart.png)
 
   - Screenshot Test
   ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/semeru_home.png)
   
 ### Soal 10
-  **Membuat web http://penanjakan.semerud13.pw agar digunakan untuk menyimpan asset file yang memiliki Document Root pada /var/www/penanjakan.semerud06.pw dan memiliki struktur folder sebagai berikut**
-  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10_1.png)
+  **Membuat web http://penanjakan.semerud06.pw agar digunakan untuk menyimpan asset file yang memiliki Document Root pada /var/www/penanjakan.semerud06.pw dan memiliki struktur folder sebagai berikut**
+  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.1.png)
   
   - Pertama-tama pada uml **Probolinggo** folder **/var/www/** didownload File/folder pendukung dengan perintah **wget 10.151.36.202/penanjakan.semeru.pw.zip**
   ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.2.png)
@@ -135,14 +135,130 @@
   - Setelah selesai download, diunzip dan direname filenya
   ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.3.png)
   
-  - kemudian ... (buat konfig di /etc/apache2/sites-available)
+  - kemudian dibuat konfig di **/etc/apache2/sites-available**, dengan di-copy-kan file default ke **penanjakan.semerud06.pw**
   ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.4.png)
   
-  - Selanjutnya di-copy-kan file default ke **penanjakan.semerud06.pw**
+  - Berikutnya diedit file **penanjakan.semerud06.pw** dengan menambahkan config sebagai berikut:
   ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.5.png)
   
-  - Berikutnya diedit file **penanjakan.semerud06.pw** dengan menambahkan config sebagai berikut:
+  - Terakhir enable site dengan perintah **a2ensite penanjakan.semerud06.pw** dan Apache2 direstart dengan perintah **service apache2 restart**
   ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/10.6.png)
   
   - Screenshot Test
-  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/penanjakan.png)
+  ![s10](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/penanjakan.png)
+
+### Soal 11
+  **Membuat agar folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan**
+  
+  - Caranya adalah pada uml **Probolinggo**, ditambahkan **Option +indexes** pada **/public** dan **Option -indexes** pada **/public/css**, **/public/javascript**, **/public/images**
+  ![s11](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/11.1.png)
+  
+  - Terakhir apache2 direstart dengan perintah **service apache2 restart**
+  ![s11](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/restart.png)
+  
+  - Screenshot Test
+  ![s11](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/11.2.png)
+  ![s11](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/11.3.png)
+  ![s11](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/11.4.png)
+  ![s11](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/11.5.png)
+  
+### Soal 12
+  **Membuat custom HTTP error code 404, yang disediakan pada file 404.html pada folder /errors untuk mengganti error default 404 dari apache**
+  
+  - Caranya adalah pada uml **Probolinggo**, di tambahkan error document 404 pada file **penanjakan.semerud06.pw**
+  ![s12](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/12.1.png)
+  
+  - Terakhir apache2 direstart dengan perintah **service apache2 restart**
+  ![s12](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/restart.png)
+  
+  - Screenshot Test
+  ![s12](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/12.2.png)
+  
+### Soal 13
+  **Membuat agar untuk mengakses file asset javascript yang awalnya harus menggunakan url http://penanjakan.semerud06.pw/public/javascripts, karena terlalu panjang maka dibuatkan konfigurasi virtual host agar ketika mengakses file asset menjadi http://penanjakan.semerud06.pw/js**
+  
+  - Caranya adalah pada uml **Probolinggo**, tambahkan **Alias "/js" "/var/www/penanjakan.semerud06.pw/public/javascripts"**
+  ![s13](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/13.1.png)
+  
+  - Terakhir apache2 direstart dengan perintah **service apache2 restart**
+  ![s13](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/restart.png)
+  
+  - Screenshot Test
+  ![s13](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/13.2.png)
+  
+### Soal 14
+  **Membuat agar http://naik.gunung.semerud06.pw pada port 8888 dengan Document Root pada /var/www/naik.gunung.semerud06.pw**
+  
+  - Pertama-tama pada uml **Probolinggo** di folder **/var/www/** didownload File/folder pendukung dengan perintah **wget 10.151.36.202/naik.gunung.semeru.pw.zip**, dan diunzip setelah selesai
+  ![s14](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/14.1.png)
+  
+  - Kemudian dimove sekaligus direname ke **naik.gunung.semerud06.pw**
+  ![s14](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/14.2.png)
+  
+  - Selanjutnya, pada folder **sites-available** dibuat config dengan mengcopy file **default** ke **naik.gunung.semerud06.pw**, yang selanjutnya disetting sebagai berikut
+  ![s14](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/14.3.png)
+  
+  - Berikutnya, pada file **apache2/ports.conf** ditambahkan Listen port **8888** 
+  ![s14](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/14.4.png)
+  
+  
+  - Terakhir enable site dengan perintah **a2ensite naik.gunung.semerud06.pw** dan Apache2 direstart dengan perintah **service apache2 restart**
+  ![s14](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/14.5.png)
+  
+  - Screenshot Test
+  ![s11](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/14.6.png)
+  
+### Soal 15
+  **Membuat autentikasi pada http://naik.gunung.semerud06.pw dengan username semeru dan password kuynaikgunung**
+  
+  - Pertama-tama pada uml **Probolinggo** di **root**, dijankan command **htpasswrd -c /etc/apache/.htpasswd semeru** dan masukan password 
+  ![s15](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/15.1.png)
+  
+  - Selanjutnya pada **naik.gunung.semerud06.pw**, ditambahkan **Auth**
+  ![s15](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/15.2.png)
+  
+  - Terakhir apache2 direstart dengan perintah **service apache2 restart**
+  ![s15](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/restart.png)
+  
+  - Screenshot Test
+  ![s15](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/15.3.png)
+  
+### Soal 16
+  **Membuat agar apabila IP Probolinggo dikunjungi akan secara otomatis dialihkan ke http://semerud06.pw**
+  
+  - Pertama-tama pada uml **Probolinggo** folder **/var/www**, dibuat directory **default** dan di-move index.html ke sana
+  ![s16](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/16.1.png)
+  
+  - Selanjutnya buat **.htaccess** dengan **RewriteEngine** sebagai berikut
+  ![s16](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/16.2.png)
+  
+  
+  - Kemudian diubah konfigurasi pada **site-available** untuk **default** sebagai berikut
+  ![s16](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/16.3.png)
+  
+  - Terakhir apache2 direstart dengan perintah **service apache2 restart**
+  ![s16](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/restart.png)
+  
+  - Screenshot Test
+  ![s16](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/semeru.png)
+  
+### Soal 17
+  **Membuat agar request gambar yang memiliki substring semeru pada /var/www/penanjakan.semerud06.pw/public/images diarahkan menuju semeru.jpg**
+  
+  - Pertama-tama pada uml **Probolinggo** dibuat **.htaccess** di **penanjakan.semerud06.pw, dengan **RewriteEngine** sebagai berikut
+  ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/17.1.png)
+  
+  - Selanjutnya pada folder **sites-available** diatur konfigurasinya sebagai berikut
+  ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/17.2.png)
+  
+  - Terakhir apache2 direstart dengan perintah **service apache2 restart**
+  ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/restart.png)
+  
+  - Screenshot Test **semeru**
+  ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/17.3.png)
+  
+  - Screenshot Test substring **semeru**
+  ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/17.4.png)
+  
+  - Screenshot Test tidak ada substring **semeru**
+  ![s17](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/17.5.png)
