@@ -1,3 +1,4 @@
+
 # Jarkom_Modul2_Lapres_D06
 
  - **Rafid Ferdianto - 05111840000032**
@@ -73,7 +74,13 @@
  - Screenshot Test
   
   ![s5](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/5.png)
-  
+
+DNS Server adalah Server yang bertugas mengenali domain yang diakses kemudian mengarahkan nya ke IP selanjutnya yang dituju.
+
+DNS Server Slave adalah DNS Server yang digunakan ketika DNS Utama mengalami kendala. Ketika DNS server utama mati/tidak bisa di akses maka akan diarahkan ke DNS Server utama slave.
+
+Web Server adalah server tempat website di atur. Pada Web Server ini setiap website akan di-assign dengan Nameserver dan documents root nya.
+ 
 ### Soal 6
   **Membuat subdomain dengan alamat http://gunung.semerud06.pw yang didelegasikan pada server MOJOKERTO dan mengarah ke IP Server PROBOLINGGO**
   
@@ -142,9 +149,20 @@
   
   - Selanjutnya dibuat file **.htaccess** di semerud06.pw, dan diisi sebagai berikut
   
-  ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.2.png)
+  ```
+  RewriteEngine On untuk menandakan bahwa akan digunakan aturan rewrite
+  RewriteCond %{REQUEST_FILENAME} !-f kondisi akan aktif jika bukan file
+  RewriteCond %{REQUEST_FILENAME} !-d kondisi akan aktif jika bukan directory
+  RewriteRule ^(.*)$ /index.php?$1 [NC,L]
+  Rule akan mengambil url yang di inputkan kemudian mempassing nilai nya melalui $1 kemudain di concat degan /index.php?$1
   
-  - Berikutnya **Allowoverride** pada file **/etc/apache2/sites-available/semerud06.pw**
+  jadi ketika semerud06.pw/home dibuka maka /home akan diambil $1 dan diganti menjadi /index.php/home
+  
+  /home = /index.php/home
+  ```
+  Re![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.2.png)
+  
+  - Berikutnya **AllowOverride** pada file **/etc/apache2/sites-available/semerud06.pw**
   
   ![s9](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/9.3.png)
   
