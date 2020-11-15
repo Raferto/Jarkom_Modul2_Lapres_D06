@@ -68,7 +68,7 @@
   
   - Selanjutnya pada uml **Mojokerto**, dibuatkan zone **semerud06** dengan master IP **Malang**, pada file **/etc/bind/named.conf.local**
   
-  ![s5](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/Mojokerto_conf.png)
+  ![s5](https://github.com/Raferto/Jarkom_Modul2_Lapres_D06/blob/main/images/mojokerto_conf.png)
  
  - Screenshot Test
   
